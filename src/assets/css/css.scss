@@ -1,0 +1,303 @@
+@import './variables';
+//reset
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+em,
+i {
+  font-weight: 100;
+  font-style: normal;
+}
+ul,
+ol,
+li {
+  list-style-type: none;
+}
+a {
+  color: #666;
+  text-decoration: none;
+  outline: 0;
+}
+p{
+  display: inline !important;
+}
+a:hover {
+  text-decoration: none;
+}
+
+html {
+  font-size: 14px;
+  font-family: 'Microsoft YaHei';
+  // font-family: 'SourceHanSansCN-Regular';
+  //min-width: 1200px;
+  color: #2b2b35;
+}
+
+[v-cloak] {
+  display: none;
+}
+// 工具类
+
+// flex布局
+
+.d-flex {
+  display: flex;
+}
+.flex-d {
+  flex-direction: column;
+}
+.flex-1 {
+  flex: 1;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+@each $flexKey, $flexValue in $flex-jc {
+  .jc-#{$flexKey} {
+    justify-content: $flexValue;
+  }
+}
+
+// 侧轴
+
+@each $flexKey, $flexValue in $flex-ai {
+  .ai-#{$flexKey} {
+    align-items: $flexValue;
+  }
+}
+
+//颜色
+@each $colorKey, $color in $colors {
+  .text-#{$colorKey} {
+    color: $color !important;
+  }
+  .bg-#{$colorKey} {
+    background-color: $color !important;
+  }
+}
+// text align center
+@each $var in (left, center, right) {
+  .text-#{$var} {
+    text-align: $var !important;
+  }
+}
+
+// 字体大小
+@each $sizeKey, $size in $sizes {
+  .fs-#{$sizeKey} {
+    font-size: $size;
+  }
+}
+.fs-12 {
+  font-size: 12px;
+}
+.fs-14 {
+  font-size: 14px;
+}
+.fs-16 {
+  font-size: 16px;
+}
+.fs-18 {
+  font-size: 18px;
+}
+.fs-20 {
+  font-size: 20px;
+}
+.fw-7{
+  font-weight: 700;
+}
+
+// 元素宽度
+@each $distanceKey, $distance in $distance {
+  @each $sizeKey, $size in $distance-sizes {
+    // w-10
+    .#{$distanceKey}-#{$sizeKey} {
+      #{$distance}: $size;
+    }
+  }
+}
+
+.fw-b {
+  font-weight: bold;
+}
+
+// 单行文字超出 省略号显示
+.overflow-omit1 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+// 2行文字超出
+.overflow-omit2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; //多行在这里修改数字即可
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+//50%圆角
+.bd-r {
+  border-radius: 50%;
+}
+.bd-none {
+  border: none;
+}
+.out-line {
+  outline: none;
+}
+// 上拉固定元素
+.sticky {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+.m-auto {
+  margin: 0 auto;
+}
+.por {
+  position: relative;
+}
+
+.poa {
+  position: absolute;
+}
+.pointer {
+  cursor: pointer !important;
+}
+
+.reversalX {
+  transform: rotateX(180deg);
+}
+.bg-tran {
+  background-color: transparent;
+}
+.dib {
+  display: inline-block;
+}
+.bdn {
+  border: none !important;
+}
+.bdct {
+  border-color: transparent !important;
+}
+
+.dn {
+  display: none;
+}
+//.bd-primary {
+//  border: 0.0714rem solid primary;
+//}
+
+.notallod {
+  cursor: not-allowed !important;
+}
+
+.lb1 {
+  letter-spacing: 1px;
+}
+.lb2 {
+  letter-spacing: 2px;
+}
+
+.usn {
+  user-select: none;
+}
+
+.mt {
+  margin-top: 20px;
+}
+.ml {
+  margin-left: 10px;
+}
+.mr {
+  margin-right: 10px;
+}
+.mb {
+  margin-bottom: 5px;
+}
+.cursor{
+  cursor:pointer
+}
