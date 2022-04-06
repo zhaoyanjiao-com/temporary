@@ -10,7 +10,8 @@ export const getData = params => {
   return get(api.GET_DATA, params)
 }
 
-export const post_a = params =>{
+//条件查询所有数据
+export const postDate= params =>{
   return post(api.GET_DATA, params)
 }
 

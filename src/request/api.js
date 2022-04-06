@@ -42,7 +42,7 @@ export function baseGet(base_url, url, params) {
  * @param {Object} params [请求时携带的参数]
  */
 export function basePost(base_url, url, params) {
-  axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8';
+  axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded';
   return new Promise((resolve, reject) => {
     axios.post(base_url + url, params)
         .then(res => {
